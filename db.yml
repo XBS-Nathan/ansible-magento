@@ -9,7 +9,9 @@
       raw: sudo apt -y install python-simplejson python-mysqldb
   vars:
     server_name: 'dev.mydomain.co.uk'
-    password: 'Fb68UHj3xDG5ZZGr'
+    database: 'magento'
+    db_username: 'magento'
+    db_password: 'Fb68UHj3xDG5ZZGr'
     sys_packages:
       - vim
   roles:

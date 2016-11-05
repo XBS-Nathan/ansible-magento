@@ -6,5 +6,8 @@
 - name: Add root user from anywhere to MySQL
   command: mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'; FLUSH PRIVILEGES;"
 
-- name: add database user
-  mysql_user: name=magento password= {{ password }} priv=*.*:ALL state=present
+- name: Add deploy DB user and allow access to news_* databases
+  mysql_user: name={{db_username}} password={{db_password}} host="%" priv=*.*:ALL state=present
+
+- name: Create databases
+  mysql_db: name={{database}} state=present collation=utf8_general_ci encoding=utf8
