@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: web
   become:  true
   gather_facts: no
   pre_tasks:
@@ -30,5 +30,4 @@
     - php-cli
     - php-common
     - composer
-    - mysql
     - redis

@@ -1,0 +1,15 @@
+---
+- hosts: db
+  become:  true
+  gather_facts: no
+  pre_tasks:
+    - name: 'install python2'
+      raw: sudo apt-get -y install python-simplejson
+  vars:
+    server_name: 'dev.mydomain.co.uk'
+    sys_packages:
+      - vim
+  roles:
+    - init
+    - mysql
+
