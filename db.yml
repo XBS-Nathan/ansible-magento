@@ -6,7 +6,7 @@
     - name: 'update apt'
       raw: sudo apt update -y
     - name: 'install python2'
-      raw: sudo apt -y install python-simplejson
+      raw: sudo apt -y install python-simplejson python-mysqldb
   vars:
     server_name: 'dev.mydomain.co.uk'
     password: 'Fb68UHj3xDG5ZZGr'
