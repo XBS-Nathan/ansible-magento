@@ -22,9 +22,9 @@
   roles:
     - init
     - nginx
-    - php5-fpm
-    - php5-cli
-    - php5-common
+    - php-fpm
+    - php-cli
+    - php-common
     - composer
     - mysql
     - redis
