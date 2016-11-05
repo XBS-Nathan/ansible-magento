@@ -1,6 +1,10 @@
 ---
 - hosts: all
-  sudo:  true
+  become:  true
+  gather_facts: no
+  pre_tasks:
+    - name: 'install python2'
+      raw: sudo apt-get -y install python-simplejson
   vars:
     doc_root: '/var/www/current'
     server_name: 'dev.mydomain.co.uk'
