@@ -44,7 +44,7 @@ server {
         try_files $uri =404;
         expires off;
         fastcgi_intercept_errors off;
-        fastcgi_pass  unix:/var/run/php-fpm.sock;
+        fastcgi_pass  unix:/var/run/php/php7.0-fpm.sock;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         fastcgi_param PATH_INFO $fastcgi_script_name;
