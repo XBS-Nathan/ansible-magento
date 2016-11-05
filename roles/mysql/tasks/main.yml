@@ -5,3 +5,8 @@
 
 - name: Add root user from anywhere to MySQL
   command: mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'; FLUSH PRIVILEGES;"
+
+- mysql_user: name='' host_all=yes state=absent
+
+- name: add database user
+  mysql_user: name=magento password= {{ password }} priv=*.*:ALL state=present

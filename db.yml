@@ -9,6 +9,7 @@
       raw: sudo apt -y install python-simplejson
   vars:
     server_name: 'dev.mydomain.co.uk'
+    password: 'Fb68UHj3xDG5ZZGr'
     sys_packages:
       - vim
   roles:
