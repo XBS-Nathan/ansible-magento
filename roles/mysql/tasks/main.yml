@@ -1,0 +1,7 @@
+---
+- name: Install MySQL server
+  sudo: yes
+  apt:  pkg=mariadb-server state=latest
+
+- name: Add root user from anywhere to MySQL
+  command: mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'; FLUSH PRIVILEGES;"

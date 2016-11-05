@@ -1,0 +1,12 @@
+---
+  - name: Install nginx
+    sudo: yes
+    apt:  pkg=nginx state=latest
+
+  - name: Ensure nginx log directory exists
+    file: dest=/var/log/nginx state=directory
+
+  - name: Change default nginx site to magento tempalte
+    sudo: yes
+    template: src=magento.tpl dest=/etc/nginx/sites-available/default
+    notify: restart nginx

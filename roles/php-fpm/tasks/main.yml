@@ -1,0 +1,4 @@
+---
+- name: Install PHP-FPM
+  sudo: yes
+  apt:  package=php-fpm state=latest

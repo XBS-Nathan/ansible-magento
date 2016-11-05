@@ -1,0 +1,30 @@
+---
+- hosts: all
+  sudo:  true
+  vars:
+    doc_root: '/var/www/current'
+    server_name: 'dev.mydomain.co.uk'
+    sys_packages:
+      - mcrypt
+      - vim
+    php_packages:
+      - { name: dev, package: php-dev }
+      - { name: pear, package: php-pear }
+      - { name: xdebug, package: php-xdebug }
+      - { name: curl, package: php-curl }
+      - { name: mcrypt, package: php-mcrypt }
+      - { name: mysql, package: php-mysql }
+      - { name: redis, package: php-redis }
+      - { name: gd, package: php-gd }
+    php_config:
+      - { param: "memory_limit", value: "256M" }
+      - { param: "date.timezone", value: "Europe/London" }
+  roles:
+    - init
+    - nginx
+    - php5-fpm
+    - php5-cli
+    - php5-common
+    - composer
+    - mysql
+    - redis
