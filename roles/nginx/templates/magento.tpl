@@ -7,12 +7,6 @@ server {
     access_log /var/log/nginx/{{ server_name }}.access.log;
     error_log /var/log/nginx/{{ server_name }}.error.log error;
 
-    location / {
-        index index.php;
-        try_files $uri $uri/ @handler;
-    }
-
-
     location = /js/index.php/x.js {
         rewrite ^(.*\.php)/ $1 last;
     }
