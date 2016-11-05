@@ -3,6 +3,8 @@
   become:  true
   gather_facts: no
   pre_tasks:
+    - name: 'update apt'
+      raw: sudo apt update -y
     - name: 'install python2'
       raw: sudo apt-get -y install python-simplejson
   vars:
