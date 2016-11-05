@@ -22,6 +22,8 @@
       - { name: mysql, package: php-mysql }
       - { name: redis, package: php-redis }
       - { name: gd, package: php-gd }
+      - { name: soap, package: php-soap }
+      - { name: mbstring, package: php-mbstring }
     php_config:
       - { param: "memory_limit", value: "256M" }
       - { param: "date.timezone", value: "Europe/London" }
